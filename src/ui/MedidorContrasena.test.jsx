@@ -7,7 +7,7 @@ describe('MedidorContrasena - componente', () => {
   // Tests de renderizado
   it('renderiza un input de tipo password', () => {
     render(<MedidorContrasena />)
-    const input = screen.getByRole('textbox', { name: /contraseña/i })
+    const input = screen.getByLabelText(/contraseña/i)
     expect(input).toBeInTheDocument()
   })
 
