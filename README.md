@@ -1,16 +1,66 @@
-# React + Vite
+# Medidor de Fortaleza de Contraseña
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Laboratorio de TDD con React, Vite y Vitest.
 
-Currently, two official plugins are available:
+## Instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+```
 
-## React Compiler
+## Correr los tests (modo watch)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm test
+```
 
-## Expanding the ESLint configuration
+## Correr los tests una sola vez
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run test:run
+```
+
+## Generar reporte de cobertura
+
+```bash
+npm run coverage
+```
+
+## Modo desarrollo
+
+```bash
+npm run dev
+```
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## Flujo TDD seguido
+
+1. Se configuró el proyecto con Vite, Vitest y React Testing Library desde cero.
+2. Se escribieron **todos** los tests primero, cubriendo renderizado, comportamiento y edge cases.
+3. Se hizo commit con los tests fallando (evidencia del flujo red-green-refactor).
+4. Se implementó la lógica pura en `src/core/calcularFortaleza.js`.
+5. Se implementó el componente `MedidorContrasena` en `src/ui/`.
+6. Se corrieron los tests hasta que todos pasaron en verde.
+7. Se refactorizó el CSS y la estructura sin romper tests.
+
+## Estructura del proyecto
+
+```
+src/
+  core/                         
+    calcularFortaleza.js
+    calcularFortaleza.test.js
+  ui/                           
+
+    MedidorContrasena.jsx
+    MedidorContrasena.css
+    MedidorContrasena.test.jsx
+  App.jsx
+  main.jsx
+  setupTests.js
+```
