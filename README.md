@@ -56,7 +56,6 @@ src/
     calcularFortaleza.js
     calcularFortaleza.test.js
   ui/                           
-
     MedidorContrasena.jsx
     MedidorContrasena.css
     MedidorContrasena.test.jsx
